@@ -80,3 +80,9 @@ And now you can run the seed:
 ```bash
 npx prisma db seed
 ```
+
+## 2.7 Using Shadcn/ui
+
+```bash
+npx shadcn-ui@latest init
+```
