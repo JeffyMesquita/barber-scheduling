@@ -35,3 +35,48 @@ npx prisma generate
 ```bash
 npx prisma migrate dev --name `YourMigrationName`
 ```
+
+## 2.6 Create a new seed
+
+In folder `prisma` create a new file `seed.ts` and run the command:
+
+```typescript
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
+
+async function seedDatabase() {
+  try {
+    // Your seed data
+
+    // Your seed function
+
+    // Close the connection to the database
+    await prisma.$disconnect();
+  } catch (error) {
+    console.error("Erro ao criar as barbearias:", error);
+  }
+}
+
+seedDatabase();
+```
+
+In `package.json` add a new script:
+
+```json
+"prisma": {
+  "seed": "ts-node prisma/seed.ts"
+}
+```
+
+Following step is install `ts-node`:
+
+```bash
+npm install ts-node --save-dev
+```
+
+And now you can run the seed:
+
+```bash
+npx prisma db seed
+```
