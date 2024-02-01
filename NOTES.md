@@ -86,3 +86,15 @@ npx prisma db seed
 ```bash
 npx shadcn-ui@latest init
 ```
+
+to install any component you can run the command:
+
+```bash
+npx shadcn-ui@latest add [component]
+```
+
+## 2.8 Using date-fns
+
+```bash
+npm install date-fns
+```
